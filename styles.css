@@ -1,0 +1,298 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #b7d5d4;
+    color: #373e40;
+}
+
+#container{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+header{
+    height: 10%;
+    width: 80%;
+    border: #373e40 solid 1px;
+    border-radius: 24px;
+    position: absolute;
+    left: 10%;
+    top: 1%;
+    background-color: #305252;
+    color: black;
+}
+
+footer{
+    height: 10%;
+    width: 80%;
+    border: #373e40 solid 1px;
+    position: relative;
+    left: 10%;
+    top: 153%;
+    background-color: #305252;
+    color: black;
+    border-radius: 24px;
+}
+
+section{
+    height: 140%;
+    width: 80%;
+    border: #373e40 solid 1px;
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    border-radius: 24px;
+}
+
+#title{
+    /*border: red solid 2px;*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+#rights{
+    /*border: red solid 2px;*/
+    display: inline-block;
+    width: 80%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    text-align: center;
+}
+
+.semester{
+    margin-top: 1%;
+    height: 46%;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    border: #373e40 solid 2px;
+    /*border-radius: 24px;*/
+}
+
+.sem{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.col1{
+/*    border: #373e40 solid 2px;*/
+    height: 80%;
+    width: 45%;
+    position: absolute;
+    left: 3.33%;
+    top: 7%;
+    border-radius: 24px;
+}
+
+.col2{
+/*    border: #373e40 solid 2px;*/
+    height: 80%;
+    width: 45%;
+    position: absolute;
+    right: 3.33%;
+    top: 7%;
+    border-radius: 24px;
+}
+
+.matiere{
+    border: green solid 1px;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+}
+
+.inputbox {
+  position: relative;
+  width: 60%;
+  margin-top: 2.5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.inputbox input {
+    display: inline-block;
+  position: relative;
+  width: 40%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #b7d5d4;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.btp{
+    width: 30% !important;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  font-size: 1.1em;
+  color: #305252;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:valid ~span,
+.inputbox input:focus ~span {
+  color: #305252;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0.7em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #305252;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid ~i,
+.inputbox input:focus ~i {
+  height: 70%;
+}
+
+.calcul {
+
+  --c1: #373e40; 
+  --c2: #488286;
+  --size-letter: 22px;
+  padding: 0.5em 1em;
+  font-size: var(--size-letter);
+
+  background-color: transparent;
+  border: 2px solid #373e40; 
+  border-radius: 0.2em;
+  cursor: pointer;
+
+  overflow: hidden;
+  position: absolute;
+  transition: 300ms cubic-bezier(0.83, 0, 0.17, 1);
+  
+  bottom: 1%;
+  left: 10%;
+  color: #373e40;
+}
+
+.calcul > .text {
+  font-weight: 700;
+  color: var(--c2);
+  position: relative;
+  z-index: 1;
+  transition: color 700ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.calcul::before {
+  top: 0;
+  left: 0;
+}
+
+.calcul::after {
+  top: 100%;
+  left: 100%;
+}
+
+.calcul::before,
+.calcul::after {
+  content: "";
+  width: 150%;
+  aspect-ratio: 1/1;
+  scale: 0;
+  transition: 1000ms cubic-bezier(0.76, 0, 0.24, 1);
+
+  background-color: var(--c2);
+  border-radius: 50%;
+
+  position: absolute;
+  translate: -50% -50%;
+}
+
+.calcul:hover {
+  & > span {
+    color: var(--c1);
+  }
+  &::before,
+  &::after {
+    scale: 1;
+  }
+}
+
+.calcul:active {
+  scale: 0.98;
+  filter: brightness(0.9);
+}
+
+.semester .resultat{
+    height: 10%;
+    width: 60%;
+    border: #373e40 solid 2px;
+    border-radius: 24px;
+    position: absolute;
+    bottom: 1%;
+    left: 30%;
+    background-color: #488286;
+    color: #b7d5d4;
+}
+
+.moyenne{
+    padding-left: 5%;
+    font-size: 150%;
+    color: #b7d5d4;
+}
+
+.message{
+    padding-left: 5%;
+    font-size: 150%;
+    color: #b7d5d4;
+}
+
+#cn{
+    width: 30%;
+    position: relative;
+    top: 70%;
+}
+
+#general{
+    height: 5%;
+    width: 60%;
+    border: #373e40 solid 2px;
+    border-radius: 24px;
+    position: absolute;
+    bottom: 0%;
+    left: 27%;
+    background-color: #488286;
+    color: #b7d5d4;
+}
+
+#btng{
+    left: 13%;
+    bottom: 0;
+}
+
