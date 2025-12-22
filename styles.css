@@ -296,3 +296,11 @@ section{
     bottom: 0;
 }
 
+.inputbox input::placeholder {
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+.inputbox:focus-within input::placeholder {
+    color: #b7d5d4;
+}
