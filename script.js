@@ -1,3 +1,7 @@
+function lee(x){
+    return !((x<=20) && (x>=0));
+}
+
 function makeNumericInput(inputId) {
     const input = document.getElementById(inputId);
     if (!input) return;
@@ -109,20 +113,25 @@ function calcul1(){
         let i2=moy(i2d,i2e);
         let fr=moy(frd,fre);
         let ang=moy(angd,ange);
-        
-        let s=(parseFloat(m1)+parseFloat(m2))*2+(parseFloat(p1)+parseFloat(p2)+parseFloat(p3)+parseFloat(p4)+parseFloat(i1)+parseFloat(i2))*1.5+(parseFloat(fr)+parseFloat(ang))*1;
-        let m=s/15;
-        m=m.toFixed(2);
-        let msg='';
-        document.getElementById('moyenne1').innerHTML=String(m);
-        if (m<10){
-            msg='normal inshallah e jey 5ir <3';
-        }else if(m<14){
-            msg='hamdoullah wassel';
+        if(lee(m1) || lee(m2) || lee(p1) || lee(p2) || lee(p3) || lee(p4) || lee(i1) || lee(i2) || lee(fr) || lee(ang)){
+            document.getElementById('msg1').innerHTML='notet bin 0 w 20!!';
+            document.getElementById('msg1').style.color='red';
+            document.getElementById('moyenne1').innerHTML='';
         }else{
-            msg='tbarkallahhh !!!'
+            let s=(parseFloat(m1)+parseFloat(m2))*2+(parseFloat(p1)+parseFloat(p2)+parseFloat(p3)+parseFloat(p4)+parseFloat(i1)+parseFloat(i2))*1.5+(parseFloat(fr)+parseFloat(ang))*1;
+            let m=s/15;
+            m=m.toFixed(2);
+            let msg='';
+            document.getElementById('moyenne1').innerHTML=String(m);
+            if (m<10){
+                msg='normal inshallah e jey 5ir <3';
+            }else if(m<14){
+                msg='hamdoullah wassel';
+            }else{
+                msg='tbarkallahhh !!!'
+            }
+            document.getElementById('msg1').innerHTML=msg; 
         }
-        document.getElementById('msg1').innerHTML=msg;
     }
 }
 
@@ -181,23 +190,29 @@ function calcul2(){
         let i3=moy(i3d,i3e);
         let fr=moy(frd,fre);
         let ang=moy(angd,ange);
-
-        let s=(i1+p2)*1.5+(m2+m1+p4)*2+(p1+p3+i2+i3+fr+ang);
-        let m=s/15;
-        m=m.toFixed(2);
-        
-        let msg='';
-
-        document.getElementById('moyenne2').innerHTML=String(m);
-        
-        if (m<10){
-            msg='normal inshallah e jey 5ir <3';
-        }else if(m<14){
-            msg='hamdoullah wassel';
+        if(lee(m1) || lee(p1) || lee(p2) || lee(p3) || lee(p4) || lee(m2) || lee(i1) || lee(i2) || lee(i3) || lee(fr) || lee(ang)){
+            document.getElementById('msg2').innerHTML='notet bin 0 w 20!!';
+            document.getElementById('msg2').style.color='red';
+            document.getElementById('moyenne2').innerHTML='';
         }else{
-            msg='tbarkallahhh !!!'
+            let s=(i1+p2)*1.5+(m2+m1+p4)*2+(p1+p3+i2+i3+fr+ang);
+            let m=s/15;
+            m=m.toFixed(2);
+            
+            let msg='';
+
+            document.getElementById('moyenne2').innerHTML=String(m);
+            
+            if (m<10){
+                msg='normal inshallah e jey 5ir <3';
+            }else if(m<14){
+                msg='hamdoullah wassel';
+            }else{
+                msg='tbarkallahhh !!!'
+            }
+            document.getElementById('msg2').innerHTML=msg;
+
         }
-        document.getElementById('msg2').innerHTML=msg;
     }
 }
 
@@ -225,4 +240,151 @@ function calcul(){
         }
         document.getElementById('msg').innerHTML=msg;
     }
+}
+
+function calcul3(){
+    const m1d=parseFloat(document.getElementById('m11d').value);
+    const m1e=parseFloat(document.getElementById('m11e').value);
+    const m2d=parseFloat(document.getElementById('m21d').value);
+    const m2e=parseFloat(document.getElementById('m21e').value);
+    const i1d=parseFloat(document.getElementById('i11d').value);
+    const i1e=parseFloat(document.getElementById('i11e').value);
+    const i2d=parseFloat(document.getElementById('i21d').value);
+    const i2e=parseFloat(document.getElementById('i21e').value);
+    const i3d=parseFloat(document.getElementById('i31d').value);
+    const i3e=parseFloat(document.getElementById('i31e').value);
+    const i4d=parseFloat(document.getElementById('i41d').value);
+    const i4e=parseFloat(document.getElementById('i41e').value);
+    const i5d=parseFloat(document.getElementById('i51d').value);
+    const i5e=parseFloat(document.getElementById('i51e').value);
+    const i5t=parseFloat(document.getElementById('i51t').value);
+    const i6d=parseFloat(document.getElementById('i61d').value);
+    const i6e=parseFloat(document.getElementById('i61e').value);
+    const i7d=parseFloat(document.getElementById('i71d').value);
+    const i7e=parseFloat(document.getElementById('i71e').value);
+    const i7t=parseFloat(document.getElementById('i71t').value);
+    const frd=parseFloat(document.getElementById('fr1d').value);
+    const fre=parseFloat(document.getElementById('fr1e').value);
+    const angd=parseFloat(document.getElementById('ang1d').value);
+    const ange=parseFloat(document.getElementById('ang1e').value);
+
+    if (isNaN(angd) || isNaN(ange) || isNaN(frd) || isNaN(fre) || isNaN(m1d) || isNaN(m1e) || isNaN(m2d) || isNaN(m2e) || isNaN(i1d) || isNaN(i1e) || isNaN(i2d) || isNaN(i2e) || isNaN(i3d) || isNaN(i3e) || isNaN(i4d) || isNaN(i4e) || isNaN(i5d) || isNaN(i5e)|| isNaN(i5t) || isNaN(i6d) || isNaN(i6e) || isNaN(i7d) || isNaN(i7e) || isNaN(i7t) ){
+        document.getElementById('msg1').innerHTML='3abi notetek lkol!!';
+        document.getElementById('msg1').style.color='red';
+        document.getElementById('moyenne1').innerHTML='';
+    }else{
+        let m1=moy(m1d,m1e);
+        let m2=moy(m2d,m2e);
+        let i1=moy(i1d,i1e);
+        let i2=moy(i2d,i2e);
+        let i3=moy(i3d,i3e);
+        let i4=moy(i4d,i4e);
+        let i5=moybtp(i3d,i3e,i5t);
+        let i6=moy(i6d,i6e);
+        let i7=moybtp(i7d,i7e,i7t);
+        let fr=moy(frd,fre);
+        let ang=moy(angd,ange);
+        if(lee(m1) || lee(i1) || lee(i2) || lee(i3) || lee(i4) || lee(i5) || lee(i6) || lee(i7) || lee(m2) || lee(fr) || lee(ang)){
+            document.getElementById('msg1').innerHTML='notet bin 0 w 20!!';
+            document.getElementById('msg1').style.color='red';
+            document.getElementById('moyenne1').innerHTML='';
+        }else{
+            document.getElementById('msg1').style.color='#b7d5d4';
+            let s=(m1+m2+i2+i3+i4+i5+i6+i7)*1.5+(i1)*2+(fr+ang);
+            let m=s/15;
+            m=m.toFixed(2);
+            
+            let msg='';
+
+            document.getElementById('moyenne1').innerHTML=String(m);
+            
+            if (m<10){
+                msg='normal inshallah e jey 5ir <3';
+            }else if(m<14){
+                msg='hamdoullah wassel';
+            }else{
+                msg='tbarkallahhh !!!'
+            }
+            document.getElementById('msg1').innerHTML=msg;
+        }
+
+    }
+}
+
+function calcul4(){
+    const m1d=parseFloat(document.getElementById('m12d').value);
+    const m1e=parseFloat(document.getElementById('m12e').value);
+    const i1d=parseFloat(document.getElementById('i12d').value);
+    const i1e=parseFloat(document.getElementById('i12e').value);
+    const i2d=parseFloat(document.getElementById('i22d').value);
+    const i2e=parseFloat(document.getElementById('i22e').value);
+    const i3d=parseFloat(document.getElementById('i32d').value);
+    const i3e=parseFloat(document.getElementById('i32e').value);
+    const i4d=parseFloat(document.getElementById('i42d').value);
+    const i4e=parseFloat(document.getElementById('i42e').value);
+    const i5d=parseFloat(document.getElementById('i52d').value);
+    const i5e=parseFloat(document.getElementById('i52e').value);
+    const i6d=parseFloat(document.getElementById('i62d').value);
+    const i6e=parseFloat(document.getElementById('i62e').value);
+    const i7d=parseFloat(document.getElementById('i72d').value);
+    const i7e=parseFloat(document.getElementById('i72e').value);
+    const i8d=parseFloat(document.getElementById('i82d').value);
+    const i8e=parseFloat(document.getElementById('i82e').value);
+    const frd=parseFloat(document.getElementById('fr2d').value);
+    const fre=parseFloat(document.getElementById('fr2e').value);
+    const angd=parseFloat(document.getElementById('ang1d').value);
+    const ange=parseFloat(document.getElementById('ang1e').value);
+
+    if (isNaN(angd) || isNaN(ange) || isNaN(frd) || isNaN(fre) || isNaN(m1d) || isNaN(m1e) || isNaN(i8d) || isNaN(i8e) || isNaN(i1d) || isNaN(i1e) || isNaN(i2d) || isNaN(i2e) || isNaN(i3d) || isNaN(i3e) || isNaN(i4d) || isNaN(i4e) || isNaN(i5d) || isNaN(i5e) || isNaN(i6d) || isNaN(i6e) || isNaN(i7d) || isNaN(i7e) ){
+        document.getElementById('msg2').innerHTML='3abi notetek lkol!!';
+        document.getElementById('msg2').style.color='red';
+        document.getElementById('moyenne2').innerHTML='';
+    }else{
+        document.getElementById('msg2').style.color='#b7d5d4';
+        let m1=moy(m1d,m1e);
+        let i1=moy(i1d,i1e);
+        let i2=moy(i2d,i2e);
+        let i3=moy(i3d,i3e);
+        let i4=moy(i4d,i4e);
+        let i5=moy(i3d,i3e);
+        let i6=moy(i6d,i6e);
+        let i7=moy(i7d,i7e);
+        let i8=moy(i6d,i6e);
+        let fr=moy(frd,fre);
+        let ang=moy(angd,ange);
+        if(lee(m1) || lee(i1) || lee(i2) || lee(i3) || lee(i4) || lee(i5) || lee(i6) || lee(i7) || lee(i8) || lee(fr) || lee(ang)){
+        document.getElementById('msg2').innerHTML='notet bin 0 w 20!!';
+        document.getElementById('msg2').style.color='red';
+        document.getElementById('moyenne2').innerHTML='';
+        }else{
+            let s=(i4+i5+i7+i8)*1.5+(m1+i1)*2+(i2+i3+i6+fr+ang);
+            let m=s/15;
+            m=m.toFixed(2);
+            
+            let msg='';
+
+            document.getElementById('moyenne2').innerHTML=String(m);
+            
+            if (m<10){
+                msg='normal inshallah e jey 5ir <3';
+            }else if(m<14){
+                msg='hamdoullah wassel';
+            }else{
+                msg='tbarkallahhh !!!'
+            }
+            document.getElementById('msg2').innerHTML=msg;
+        }
+    }
+}
+
+function showtooltip(x){
+    let id="tooltip"+String(x)
+    document.getElementById(id).style.transition="all 0.5s ease-out";
+    document.getElementById(id).style.opacity="1";
+}
+
+function hidetooltip(x){
+    let id="tooltip"+String(x)
+    document.getElementById(id).style.transition="all 0.5s ease-in";
+    document.getElementById(id).style.opacity="0";
 }
