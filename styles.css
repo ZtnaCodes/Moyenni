@@ -139,6 +139,10 @@ section{
   z-index: 10;
 }
 
+.inputbox:hover input{
+  color: #b7d5d4;
+}
+
 .btp{
     width: 30% !important;
 }
