@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moyenni</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <main id="container">
+        <header>
+            <h1 id="title">
+                Calcul Moyenne 
+            </h1>
+        </header>
+        <section>
+            <div class="semester">
+                <h2 class="sem">Semester 1</h2>
+                <div class="col1"> 
+                    <div class="inputbox">
+                        <input required="required" type="text" id="m11d" placeholder="ds">
+                        <input required="required" type="text" id="m11e" placeholder="exam">
+                        <span>Algebre I</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="m21d" placeholder="ds">
+                        <input required="required" type="text" id="m21e" placeholder="exam">
+                        <span>Analyse I</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i11d" placeholder="ds">
+                        <input required="required" type="text" id="i11e" placeholder="exam">
+                        <span>Traitement du signal</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i21d" placeholder="ds">
+                        <input required="required" type="text" id="i21e" placeholder="exam">
+                        <span>Base de Données</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="fr1d" placeholder="ds">
+                        <input required="required" type="text" id="fr1e" placeholder="exam">
+                        <span>Francais</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i31d" placeholder="ds">
+                        <input required="required" type="text" id="i31e" placeholder="exam">
+                        <span>Architecture des Ordinateurs</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i41d" placeholder="ds">
+                        <input required="required" type="text" id="i41e" placeholder="exam">
+                        <span>Logique Formelle</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i51d" placeholder="ds" class="btp">
+                        <input required="required" type="text" id="i51e" placeholder="exam" class="btp">
+                        <input required="required" type="text" id="i51t" placeholder="tp" class="btp">
+                        <span>Dev Web</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i61d" placeholder="ds">
+                        <input required="required" type="text" id="i61e" placeholder="exam">
+                        <span>POO (C++)</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="ang1d" placeholder="ds">
+                        <input required="required" type="text" id="ang1e" placeholder="exam">
+                        <span>Anglais</span>    
+                        <i></i>
+                    </div>
+                </div>
+                <div class="inputbox" id="cn">
+                        <input required="required" type="text" id="i71d" placeholder="ds" class="btp">
+                        <input required="required" type="text" id="i71e" placeholder="exam" class="btp">
+                        <input required="required" type="text" id="i71t" placeholder="exam" class="btp">
+                        <span>OS</span>
+                        <i></i>
+                    </div>
+                <button class="calcul" onclick="calcul3()">
+                    <span class="text"> Calculer </span>
+                </button>
+                <div class="resultat">
+                    <span class="moyenne" id="moyenne1"></span>
+                    <span class="message" id="msg1"></span>
+                </div>
+            </div>
+            <div class="semester">
+                <h2 class="sem">Semester 2</h2>
+                <div class="col1"> 
+                    <div class="inputbox">
+                        <input required="required" type="text" id="m12d" placeholder="ds">
+                        <input required="required" type="text" id="m12e" placeholder="exam">
+                        <span>Probabilités et Statistiques</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i12d" placeholder="ds">
+                        <input required="required" type="text" id="i12e" placeholder="exam">
+                        <span>Theorie des Languages Automates</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i22d" placeholder="ds">
+                        <input required="required" type="text" id="i22e" placeholder="exam">
+                        <span>Atelier Java</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i32d" placeholder="ds">
+                        <input required="required" type="text" id="i32e" placeholder="exam">
+                        <span>Python</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i42d" placeholder="ds">
+                        <input required="required" type="text" id="i42e" placeholder="exam">
+                        <span>Ingenieurie des Bases de Données</span>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i52d" placeholder="ds">
+                        <input required="required" type="text" id="i52e" placeholder="exam">
+                        <span>Conception</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i62d" placeholder="ds">
+                        <input required="required" type="text" id="i62e" placeholder="exam">
+                        <span>Transmission des Données</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i72d" placeholder="ds">
+                        <input required="required" type="text" id="i72e" placeholder="exam">
+                        <span>Reseaux Locaux</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="i82d" placeholder="ds">
+                        <input required="required" type="text" id="i82e" placeholder="exam">
+                        <span>OS</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input required="required" type="text" id="ang2d" placeholder="ds">
+                        <input required="required" type="text" id="ang2e" placeholder="exam">
+                        <span>Anglais</span>    
+                        <i></i>
+                    </div>
+                </div>
+                <div class="inputbox" id="cn">
+                        <input required="required" type="text" id="fr2d" placeholder="ds">
+                        <input required="required" type="text" id="fr2e" placeholder="exam">
+                        <span>Francais</span>
+                        <i></i>
+                    </div>
+                <button class="calcul" onclick="calcul4()">
+                    <span class="text"> Calculer </span>
+                </button>
+                <div class="resultat">
+                    <span class="moyenne" id="moyenne2"></span>
+                    <span class="message" id="msg2"></span>
+                </div>
+            </div>
+            <div class="general">
+                <button class="calcul" id="btng" onclick="calcul()">
+                    <span class="text"> General </span>
+                </button>
+                <div class="resultat" id="general">
+                    <span class="moyenne" id="moyenne"></span>
+                    <span class="message" id="msg"></span>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <h1 id="rights">
+                copyright © ZitounaCodes | All Rights Reserved.
+            </h1>
+        </footer>
+    </main>
+</body>
+</html>

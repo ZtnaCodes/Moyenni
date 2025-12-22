@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleindex.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <img src="map.png" alt="Three departments" usemap="#housemap" width="100%" height="100%">
+    
+    <div class="tooltip" id="tooltip1">Calcul de moyenne 2ème mi</div>
+    <div class="tooltip" id="tooltip2">Calcul de moyenne 2ème pi</div>
+    <div class="tooltip" id="tooltip3">Calcul de moyenne 1ère mpi</div>
+
+    <map name="housemap">
+        <!-- pi: 924,88,1312,242 -->
+        <area shape="rect" 
+              coords="924,88,1312,242" 
+              alt="pi" 
+              href="#"
+              title="Go to Page pi"
+              onmouseover='showtooltip(2)'
+              onmouseout='hidetooltip(2)'">
+        
+        <!-- mi: 246,82,602,238 -->
+        <area shape="rect" 
+              coords="246,82,602,238" 
+              alt="mi" 
+              href="mi2.html"
+              title="Go to Page mi"
+              onmouseover='showtooltip(1)'
+              onmouseout='hidetooltip(1)'">
+        
+        <!-- mpi: 480,482,1058,714 -->
+        <area shape="rect" 
+              coords="480,482,1058,714" 
+              alt="mpi" 
+              href="mpi1.html"
+              title="Go to Page mpi"
+              onmouseover='showtooltip(3)'
+              onmouseout='hidetooltip(3)'">
+    </map>
+</body>
+</html>
