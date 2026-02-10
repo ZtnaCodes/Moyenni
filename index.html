@@ -8,6 +8,46 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const image = document.querySelector("img[usemap]");
+    const map = document.querySelector("map");
+    const areas = map.querySelectorAll("area");
+
+    const originalWidth = image.naturalWidth;
+    const originalHeight = image.naturalHeight;
+
+    function resizeMap() {
+        const currentWidth = image.clientWidth;
+        const currentHeight = image.clientHeight;
+
+        const widthRatio = currentWidth / originalWidth;
+        const heightRatio = currentHeight / originalHeight;
+
+        areas.forEach(area => {
+            const originalCoords = area.dataset.originalCoords
+                ? area.dataset.originalCoords.split(',')
+                : area.coords.split(',');
+
+            if (!area.dataset.originalCoords) {
+                area.dataset.originalCoords = area.coords;
+            }
+
+            const newCoords = originalCoords.map((coord, index) => {
+                return index % 2 === 0
+                    ? Math.round(coord * widthRatio)
+                    : Math.round(coord * heightRatio);
+            });
+
+            area.coords = newCoords.join(',');
+        });
+    }
+
+    window.addEventListener("resize", resizeMap);
+    resizeMap();
+});
+</script>
+
     <img src="map.png" alt="Three departments" usemap="#housemap" width="100%" height="100%">
     
     <div class="tooltip" id="tooltip1">Calcul de moyenne 2ème mi</div>
